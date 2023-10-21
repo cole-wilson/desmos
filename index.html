@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>desmos 3d</title>
+		<style>
+body {font-family: monospace;}
+p {max-width: 600px;}
+textarea {width: 90vw;height: 500px;}
+		</style>
+	</head>
+	<body>
+		<h1>Desmos 3D Importer</h1>
+		<p>To be used with <a target="_blank" href="https://www.desmos.com/calculator/w1n4ze5xud">this premade graph</a>. Upload a `*.obj` file and hit the generate button. Your data never leaves your device. Paste the generated $\TeX$ commands into the "Data" folder in Desmos, replacing any existing variables with the same names.</p>
+		<input onchange="go()" type="file" id="objfile">
+		<br>
+		<br>
+		<div id="output"></div>
+		<!-- <iframe id="embed" src="https://desmos.com/calculator"></iframe> -->
+		<!-- <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script> -->
+		<script>
+MathJax = {
+  tex: {
+    packages: ['base', 'ams'],        // extensions to use
+    inlineMath: [              // start/end delimiter pairs for in-line math
+		['$', '$'],
+      ['\\(', '\\)']
+    ],
+    displayMath: [             // start/end delimiter pairs for display math
+      ['$$', '$$'],
+      ['\\[', '\\]']
+    ]
+  }
+}
+		</script>
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="/script.js"></script>
+	</body>
+</html>
